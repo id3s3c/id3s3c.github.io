@@ -1,6 +1,6 @@
 ---
 layout: home
-title: cyberspace
+title: /cyberspace
 permalink: /
 ---
 
