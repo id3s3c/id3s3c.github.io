@@ -5,7 +5,7 @@ layout: page
 
 # Leveraging DevOps to Threat Hunt
 
-So recently I started a freelance gig in devops (secdevops|secops|devsecops), cause I always liked the sysadmin stuff and messing with devops tools like `ansible`, `salt` and `docker`, and would like to do two things: 
+So recently I started a freelance gig in devops, cause I always liked the sysadmin stuff and messing with devops tools like `ansible`, `salt` and `docker`, and would like to do two things: 
 
 1. Use them in real world scenarios to build something big, and when to use each one.
 2. Leverage them to increase the overall security view of networks/applications, including in software development life cycle.
@@ -64,5 +64,6 @@ $ sudo docker run nginx -p 80:8008 -v /home/id3/html:/usr/share/html
 # Mapping a local volume into the container
 $ sudo docker run nginx -v /home/id3/config:/etc/nginx
 ```
+
 
 I'm planning to publish a full series on how to do pratical threat hunting using the elk stack, sysmon, wazuh and stuff in a small lab, let's see how it goes.
