@@ -65,5 +65,4 @@ $ sudo docker run nginx -p 80:8008 -v /home/id3/html:/usr/share/html
 $ sudo docker run nginx -v /home/id3/config:/etc/nginx
 ```
 
-
 I'm planning to publish a full series on how to do pratical threat hunting using the elk stack, sysmon, wazuh and stuff in a small lab, let's see how it goes.

@@ -3,8 +3,12 @@ header_pages:
   - index.md
   - about.md
 
+gems:
+- jekyll-seo-tag
+
 style: black
 
 footer: 'follow me <a href="https://twitter.com/id3s3c">@twitter</a>'
 
+markdown: kramdown
 remote_theme: b2a3e8/jekyll-theme-console

