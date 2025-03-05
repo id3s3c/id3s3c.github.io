@@ -1,0 +1,46 @@
+baseURL = 'https://id3s3c.github.io/'
+languageCode = 'en-us'
+title = 'blog'
+theme = "nightfall"
+
+[params]
+user = "id3s3c"
+hostname = "cybespace.io"
+footerHtml = 'Built with <a href="https://gohugo.io" class="footerLink">Hugo</a> and <a href="https://github.com/LordMathis/hugo-theme-nightfall" class="footerLink">Nightfall</a> theme'
+
+  [params.author]
+    name = "id3s3c blog"
+    avatarSize = "size-m"
+    email = "victor.ide@protonmail.com"
+    
+  [params.styles]
+    color = "red"
+
+[menu]
+  [[menu.header]]
+    name = "posts"
+    weight = 0
+    url = "/posts"
+
+  [[menu.header]]
+    name = "about"
+    weight = 0
+    url = "/about"
+
+[[params.social]]
+key = 0
+name = "github"
+url = "https://github.com/id3s3c"
+icon = "fa-brands fa-github"
+target = "_blank"
+aria = "GitHub Profile"
+
+[[params.social]]
+key = 1
+name = "x/twitter"
+url = "https://www.x.com/id3s3c"
+
+[[params.social]]
+key = 3
+name = "email"
+url = "mailto:victor.ide@protonmail.com"

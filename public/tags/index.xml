@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on blog</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>victor.ide@protonmail.com (id3s3c blog)</managingEditor>
+    <webMaster>victor.ide@protonmail.com (id3s3c blog)</webMaster>
+    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dfir</title>
+      <link>http://localhost:1313/tags/dfir/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/tags/dfir/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Evtx</title>
+      <link>http://localhost:1313/tags/evtx/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/tags/evtx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Forensics</title>
+      <link>http://localhost:1313/tags/forensics/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/tags/forensics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ftk</title>
+      <link>http://localhost:1313/tags/ftk/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/tags/ftk/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ir</title>
+      <link>http://localhost:1313/tags/ir/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/tags/ir/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mft</title>
+      <link>http://localhost:1313/tags/mft/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/tags/mft/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Volatility</title>
+      <link>http://localhost:1313/tags/volatility/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/tags/volatility/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

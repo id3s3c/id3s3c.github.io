@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>
+Volatility | id3s3c blog
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.145.0">
+
+
+<link rel="canonical" href="http://localhost:1313/tags/volatility/" >
+  <link href="http://localhost:1313/tags/volatility/index.xml" rel="alternate" type="application/rss+xml" title="blog" >
+  <link href="http://localhost:1313/tags/volatility/index.xml" rel="feed" type="application/rss+xml" title="blog" >
+
+
+
+
+<link href="/css/style.min.7d63417984ed8fed032ecdfb8e571a9663f6cf20a48a8f6b4d5a9b32e178ffe7.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a class="terminal" href="/">
+                <span>id3s3c@cybespace.io ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="http://localhost:1313/about" title="" >
+                        ~/about</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/posts" title="" >
+                        ~/posts</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+
+<div>
+    <div class="listHeader">
+        <h1>Volatility</h1>
+    </div>
+
+    
+
+    <div>
+        
+
+        <a class="postListLink" href="http://localhost:1313/posts/2024-01-05-dfir-cheat-sheet/">
+            
+            <div class="postListItem" role="listitem">
+                <div class="postHeader">
+                    <span class="postTitle">DFIR cheat sheet</span>
+                    
+                    <time class="postDate" datetime="2024-01-05">January 5, 2024</time>
+                </div>
+                <div class="postExcerpt">
+                    <p><p>Wrap-up of a bunch of open source information about incident response and digital forensics.</p>
+<h2 id="-overall-methodology---digital-forensics-for-ir">📖 Overall methodology - Digital Forensics for IR</h2>
+<ol>
+<li><a href="https://digital-forensics.sans.org/media/rekall-memory-forensics-cheatsheet.pdf">RAM Memory acquisition</a> (If the acquisition make sense)
+<ol>
+<li>FTK Imager</li>
+<li><a href="https://github.com/Velocidex/WinPmem/releases/tag/v4.0.rc1">Wimpmem</a></li>
+<li><a href="https://github.com/thimbleweed/All-In-USB/blob/master/utilities/DumpIt/DumpIt.exe">DumpIp</a></li>
+</ol>
+</li>
+<li>Check if machine has full disk encryption, if so LIVE image it before turning it off.
+<ol>
+<li><a href="http://www.magnetforensics.com/products/encrypted-disk-detector/">EDD</a></li>
+</ol>
+</li>
+<li>Disk imaging</li>
+</ol>
+<p>Due to <a href="https://en.wikipedia.org/wiki/Wear_leveling">wearing leveling</a> when imaging SSD Drives always prefer to image the system LIVE. Nice intro paper on the subject can be found <a href="https://siaiap34.univali.br/sbseg2015/anais/WFC/artigoWFC01.pdf">here</a> (PT/BR) and <a href="https://www.youtube.com/watch?v=v_YKD0BRGLM&amp;list=PLfouvuAjspTqyfrgYO76VOwvVqK1AsMwK&amp;index=43">here</a>.</p></p>
+                </div>
+            </div>
+        </a>
+
+
+        
+    </div>
+</div>
+
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>Built with <a href="https://gohugo.io" class="footerLink">Hugo</a> and <a href="https://github.com/LordMathis/hugo-theme-nightfall" class="footerLink">Nightfall</a> theme</span>
+    
+</footer>
+    </div>
+
+</body>
+
+</html>

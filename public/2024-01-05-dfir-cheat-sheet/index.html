@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DFIR cheat sheet | My New Hugo Site</title>
+<meta name="title" content="DFIR cheat sheet" />
+<meta name="description" content="DFIR Cheatsheet
+Wrap-up of a bunch of open source information about incident response and digital forensics.
+📖 Overall methodology - Digital Forensics for IR
+
+RAM Memory acquisition (If the acquisition make sense)
+
+FTK Imager
+Wimpmem
+DumpIp
+
+
+Check if machine has full disk encryption, if so LIVE image it before turning it off.
+
+EDD
+
+
+Disk imaging
+
+Due to wearing leveling when imaging SSD Drives always prefer to image the system LIVE. Nice intro paper on the subject can be found here (PT/BR) and here." />
+<meta name="author" content="" />
+<meta name="keywords" content="dfir,forensics,volatility,ir,ftk,mft,evtx," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/2024-01-05-dfir-cheat-sheet/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="DFIR cheat sheet">
+  <meta property="og:description" content="DFIR Cheatsheet Wrap-up of a bunch of open source information about incident response and digital forensics.
+📖 Overall methodology - Digital Forensics for IR RAM Memory acquisition (If the acquisition make sense) FTK Imager Wimpmem DumpIp Check if machine has full disk encryption, if so LIVE image it before turning it off. EDD Disk imaging Due to wearing leveling when imaging SSD Drives always prefer to image the system LIVE. Nice intro paper on the subject can be found here (PT/BR) and here.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:tag" content="Dfir">
+    <meta property="article:tag" content="Forensics">
+    <meta property="article:tag" content="Volatility">
+    <meta property="article:tag" content="Ir">
+    <meta property="article:tag" content="Ftk">
+    <meta property="article:tag" content="Mft">
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DFIR cheat sheet">
+  <meta name="twitter:description" content="DFIR Cheatsheet Wrap-up of a bunch of open source information about incident response and digital forensics.
+📖 Overall methodology - Digital Forensics for IR RAM Memory acquisition (If the acquisition make sense) FTK Imager Wimpmem DumpIp Check if machine has full disk encryption, if so LIVE image it before turning it off. EDD Disk imaging Due to wearing leveling when imaging SSD Drives always prefer to image the system LIVE. Nice intro paper on the subject can be found here (PT/BR) and here.">
+
+
+  
+  
+  <meta itemprop="name" content="DFIR cheat sheet">
+  <meta itemprop="description" content="DFIR Cheatsheet Wrap-up of a bunch of open source information about incident response and digital forensics.
+📖 Overall methodology - Digital Forensics for IR RAM Memory acquisition (If the acquisition make sense) FTK Imager Wimpmem DumpIp Check if machine has full disk encryption, if so LIVE image it before turning it off. EDD Disk imaging Due to wearing leveling when imaging SSD Drives always prefer to image the system LIVE. Nice intro paper on the subject can be found here (PT/BR) and here.">
+  <meta itemprop="wordCount" content="2412">
+  <meta itemprop="keywords" content="Dfir,Forensics,Volatility,Ir,Ftk,Mft,Evtx">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+    
+    <link href="/syntax.min.css" rel="stylesheet">
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>My New Hugo Site</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>DFIR cheat sheet</h1>
+<p class="byline">
+  <time datetime='0001-01-01' pubdate>
+    0001-01-01
+  </time>
+  
+</p>
+
+<content>
+  <h1 id="dfir-cheatsheet">DFIR Cheatsheet</h1>
+<p>Wrap-up of a bunch of open source information about incident response and digital forensics.</p>
+<h2 id="-overall-methodology---digital-forensics-for-ir">📖 Overall methodology - Digital Forensics for IR</h2>
+<ol>
+<li><a href="https://digital-forensics.sans.org/media/rekall-memory-forensics-cheatsheet.pdf">RAM Memory acquisition</a> (If the acquisition make sense)
+<ol>
+<li>FTK Imager</li>
+<li><a href="https://github.com/Velocidex/WinPmem/releases/tag/v4.0.rc1">Wimpmem</a></li>
+<li><a href="https://github.com/thimbleweed/All-In-USB/blob/master/utilities/DumpIt/DumpIt.exe">DumpIp</a></li>
+</ol>
+</li>
+<li>Check if machine has full disk encryption, if so LIVE image it before turning it off.
+<ol>
+<li><a href="http://www.magnetforensics.com/products/encrypted-disk-detector/">EDD</a></li>
+</ol>
+</li>
+<li>Disk imaging</li>
+</ol>
+<p>Due to <a href="https://en.wikipedia.org/wiki/Wear_leveling">wearing leveling</a> when imaging SSD Drives always prefer to image the system LIVE. Nice intro paper on the subject can be found <a href="https://siaiap34.univali.br/sbseg2015/anais/WFC/artigoWFC01.pdf">here</a> (PT/BR) and <a href="https://www.youtube.com/watch?v=v_YKD0BRGLM&amp;list=PLfouvuAjspTqyfrgYO76VOwvVqK1AsMwK&amp;index=43">here</a>.</p>
+<ol>
+<li>FTK Imager</li>
+<li>gkape</li>
+<li>Arsenal Image Mounter</li>
+<li>dc3dd / dd</li>
+</ol>
+<h2 id="-quick-wins">🔥 Quick Wins</h2>
+<p>Evidence of execution / opened files, <a href="https://1234n6-my.sharepoint.com/:x:/p/adam/EU3Fk3ec6NdPsSQx1eA1sfwB_R_fRa4tJ4c1FR6WJlWIEA?rtime=bKtN5Ka82Eg">check OS version for each indicator</a></p>
+<p>:::info
+Most tools to analyze these artifacts used are from <a href="https://twitter.com/ericrzimmerman">eric zimmerman</a> <a href="https://ericzimmerman.github.io/#!index.md">github</a>, thanks for the amazing tools and effort Eric!
+:::</p>
+<ul>
+<li><a href="https://github.com/mandiant/ShimCacheParser">ShimCache</a> =&gt; <code>HKLM\SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatCache\AppCompatCache </code></li>
+<li>AmCache (regripper) =&gt; <code>\%SystemRoot%\AppCompat\Programs\Amcache.hve</code></li>
+<li><a href="https://github.com/EricZimmerman/PECmd">Prefetch files</a> =&gt; <code>C:\Windows\Prefetch\*.pf</code></li>
+<li><a href="https://github.com/EricZimmerman/JLECmd">Jumplists</a> =&gt;<code>%HOME%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\*-ms</code></li>
+<li>LNK files =&gt; <code>%HOME%\AppData\Roaming\Microsoft\Windows\Recent Items\*</code></li>
+<li>Shellbags =&gt; <code>%HOME%\AppData\Local\Microsoft\Windows\UsrClass.dat</code> | <code>HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\Shell</code></li>
+<li>Registry (regripper) =&gt; <code>C:\Windows\System32\config\{SAM,SOFTWARE,SYSTEM,SECURITY}</code>
+<ul>
+<li>NTUser.dat in user profile folder <code>C:\users\malicious_user\ntuser.dat</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="triaging">🔍Triaging</h2>
+<ul>
+<li>Look for high entropy executable in file system (possible malware) with <a href="https://cert.at/media/files/downloads/software/densityscout/files/densityscout_build_45_windows.zip">densityscout</a>
+<ul>
+<li><code>densityscout -s cpl,exe,dll,ocx,sys,scr -p 0.1 -o results.txt c:\Windows\System32</code></li>
+</ul>
+</li>
+<li>Grab memory image</li>
+<li>Grab hibernation file</li>
+<li>Grab page file</li>
+<li>Grab registry hives</li>
+<li>Grab event logs (evt/etvx)</li>
+<li>Grab the Master File Table ($MFT)</li>
+</ul>
+<p>Memory acquisition on virtualised platforms</p>
+<ul>
+<li>VMWare = .vmem file</li>
+<li>MS Hyper-V = .bin file</li>
+<li>Parallels = .mem file</li>
+<li>VirtualBox = .sav file (partial)</li>
+</ul>
+<h2 id="mounting-evidences">🧱Mounting evidences</h2>
+<p><strong>Mounting E01</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ewfmount image.E01 /mnt/ewf_mount <span style="color:#f92672">&amp;&amp;</span> mount -o ro,loop,show_sys_files,streams_interface<span style="color:#f92672">=</span>windows /mnt/ewf_mount/ewf1 /mnt/windows_mount</span></span></code></pre></div><p><strong>Umount the image:</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>umount /mnt/windows_mount <span style="color:#f92672">&amp;&amp;</span> umount /mnt/ewf_moun</span></span></code></pre></div><p><strong>Mounting vmkd as read-only</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mount /disk/disk.vmdk /path -o ro,loop</span></span></code></pre></div><p><strong>Mounting raw/dd</strong></p>
+<ol>
+<li>List disk information</li>
+<li>Get start offset and multiply by sector size =&gt; 2048 * 512 = 1048576</li>
+</ol>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo mount disk.raw /mnt/mountpoint -o ro,offset<span style="color:#f92672">=</span><span style="color:#ae81ff">1048576</span></span></span></code></pre></div><p><strong>Mounting vmdk</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ guestmount -a Joao<span style="color:#ae81ff">\ </span>Topete.vmdk -i --ro /mnt/leforense/joao-pc</span></span></code></pre></div><p><strong>Converting vmdk to raw</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ qemu-img convert -f vmdk Joao<span style="color:#ae81ff">\ </span>Topete.vmdk -O raw joao.raw</span></span></code></pre></div><p><strong>Retrieving $MFT from raw image</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mmls image.raw
+</span></span><span style="display:flex;"><span>$ icat -o &lt;offset, 2048&gt; image-file.E01 <span style="color:#ae81ff">0</span> &gt; image.mft
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># then generate timeline with analyzeMFT.py</span>
+</span></span><span style="display:flex;"><span>$ analyzemft.py -f /path/to/mounted/windows/image/<span style="color:#ae81ff">\$</span>MFT -a -e -o analyzemft-results.csv
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or generate with MFTEcmd</span>
+</span></span><span style="display:flex;"><span>MFTECmd.exe -f <span style="color:#e6db74">&#34;C\$MFT&#34;</span> --body <span style="color:#e6db74">&#34;E:\timeline&#34;</span> --bodyf test.body --blf --bdl E:
+</span></span><span style="display:flex;"><span>mactime -z America/Sao_Paulo -y -d -b /test.body 2019-07-23..2019-08-07 &gt; /test-filesystem-timeline.csv</span></span></code></pre></div><p><strong>Mounting volume shadow copy</strong></p>
+<ul>
+<li><a href="https://www.shadowexplorer.com/downloads.html">ShadowExplorer</a></li>
+</ul>
+<p>Windows - mount the image image file using Arsenal Image Mounter</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vssadmin list shadows /for<span style="color:#f92672">=</span>D:
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then we just need to create a symbolic link and access it</span>
+</span></span><span style="display:flex;"><span>mklink link created <span style="color:#66d9ef">for</span> C:<span style="color:#ae81ff">\p</span>ath<span style="color:#ae81ff">\t</span>o<span style="color:#ae81ff">\l</span>ink &lt;&lt;<span style="color:#f92672">===</span>&gt;&gt; <span style="color:#ae81ff">\\</span>?<span style="color:#ae81ff">\G</span>LOBALROOT<span style="color:#ae81ff">\D</span>evice<span style="color:#ae81ff">\H</span>arddiskVolumeShadowCopy<span style="color:#f92672">{</span>1|2|3|4<span style="color:#f92672">}</span></span></span></code></pre></div>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># From raw image</span>
+</span></span><span style="display:flex;"><span>vshadowmount /mnt/ewf_mount/ewf1 /mnt/vss &amp; cd /mnt/vss <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">for</span> i in vss* ; <span style="color:#66d9ef">do</span> mountwin $i /mnt/shadow_mount/$i ; <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># From mounted image</span>
+</span></span><span style="display:flex;"><span>vshadowinfo /mnt/ewf_mount/ewf1</span></span></code></pre></div><h2 id="registry-analysis">💾Registry Analysis</h2>
+<p><a href="https://github.com/keydet89/RegRipper2.8">https://github.com/keydet89/RegRipper2.8</a></p>
+<p><strong>Full analysis</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rip.pl &lt;/path/to/registry/hive/NTUUSER.DAT&gt; -f ntuser &gt; user.txt
+</span></span><span style="display:flex;"><span>$ rip.pl &lt;/path/to/registry/hive/SYSTEM&gt; -f system &gt; system.txt
+</span></span><span style="display:flex;"><span>$ rip.pl &lt;/path/to/registry/hive/SOFTWARE&gt; -f software &gt; software.txt
+</span></span><span style="display:flex;"><span>$ rip.pl &lt;/path/to/registry/hive/SECURITY&gt; -f security &gt; security.txt</span></span></code></pre></div><p><strong>Recent docs opened from user</strong></p>
+<p><a href="http://rip.pl/">rip.pl</a></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rip.pl -r c:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\&lt;</span>username&gt;<span style="color:#ae81ff">\N</span>TUSER.DAT -p recentdocs &gt; rip-recent-docs-resultst.txt</span></span></code></pre></div><p><strong>Recent searches have been done from the Start menu</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rip.pl -r c:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\&lt;</span>username&gt;<span style="color:#ae81ff">\N</span>TUSER.DAT -p wordwheelquery &gt; rip-recent-start-searches-resultst.txt</span></span></code></pre></div><p><strong><a href="https://www.andreafortuna.org/2020/03/04/recmd-command-line-tool-for-windows-registry-analysis">Searching for specific strings</a></strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>RECmd.exe <span style="color:#f92672">-f</span> .\NTUSER.dat --sk Skype
+</span></span><span style="display:flex;"><span>RECmd.exe <span style="color:#f92672">-f</span> .\UsrClass.dat --sd Skype</span></span></code></pre></div><p><strong>Check for bad stuff in keys of auto start applications</strong></p>
+<ul>
+<li><code>HKLM\Software\Microsoft\Windows\CurrentVersion\Run</code></li>
+<li><code>HKLM\Software\Microsoft\Windows\CurrentVersion\Runonce</code></li>
+<li><code>HKLM\Software\Microsoft\Windows\CurrentVersion\RunonceEx</code></li>
+</ul>
+<h2 id="memory-analysis-methodology">📖Memory analysis methodology</h2>
+<p>Identify rogue processes</p>
+<ul>
+<li>Analyze processes
+<ul>
+<li>Legitimate process?</li>
+<li>Name spelled right?</li>
+<li>Fits with system context?</li>
+</ul>
+</li>
+<li>Full path
+<ul>
+<li>Is the process executable in the usual place?</li>
+<li>Is it running from user or temp directories?</li>
+</ul>
+</li>
+<li>Parent process
+<ul>
+<li>Is it as expected?</li>
+</ul>
+</li>
+<li>Command line
+<ul>
+<li>Does it have the right switches?</li>
+</ul>
+</li>
+<li>Start time
+<ul>
+<li>Was it started at boot or something else?</li>
+<li>Did the process start close the time of a known incident?</li>
+</ul>
+</li>
+<li>Security ID
+<ul>
+<li>Does the SID make sense? Would a system process run with a user accounts’ SID?</li>
+</ul>
+</li>
+<li>Analyzing process objects
+<ul>
+<li>DLLs</li>
+<li>Handles
+<ul>
+<li>Files and directories
+<ul>
+<li>Look at occurrence of use. Malware files should, historically, be the least accessed files on the system</li>
+</ul>
+</li>
+<li>Registry</li>
+<li>Events</li>
+</ul>
+</li>
+<li>Threads</li>
+<li>Sockets</li>
+</ul>
+</li>
+<li>Network artifacts
+<ul>
+<li>Suspicious ports
+<ul>
+<li>out-of-the-ordinary ports</li>
+<li>listening ports (backdoors)</li>
+</ul>
+</li>
+<li>Suspicious connections
+<ul>
+<li>Anything connecting out</li>
+<li>Known bad-IPs</li>
+<li>Creation time matching an incident</li>
+</ul>
+</li>
+<li>Suspicious processes
+<ul>
+<li>Should this process have networking capabilities?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Detecting code injection
+<ul>
+<li>Look for DLL injection and process hollowing</li>
+</ul>
+</li>
+<li>Rootkit detection
+<ul>
+<li>Not a big thing anymore, most AV does a good job at detecting this</li>
+<li>Hides in
+<ul>
+<li>System service descriptor tables</li>
+<li>Interrupt descriptor tables</li>
+<li>Function import address tables</li>
+<li>I/O request packets</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Acquiring processes and drivers
+<ul>
+<li>Submit for reverse engineering or AV analysis</li>
+<li>Review strings
+<ul>
+<li>add to bad-words list</li>
+<li>You can export Volatility switches so you don’t have to set them all the time:
+<ul>
+<li>export VOLATILITY_PROFILE=Win7SP1x64</li>
+<li>export VOLATILITY_LOCATION=file://image.img</li>
+</ul>
+</li>
+<li>imagecopy can be used to convert crash dumps and hibernation files to raw memory</li>
+<li>Started applications for your timeline
+<ul>
+<li>pslist</li>
+<li>psscan</li>
+<li>pstree</li>
+</ul>
+</li>
+<li>Run dllist to see what DLLs were loaded as part of interesting processes</li>
+<li>Check handles and services</li>
+<li>Run connections, connscan, sockets, sockscan and netscan to see network connections</li>
+<li>malfind to find hidden and injected code</li>
+<li>ldrmodules to find unlinked DLLs</li>
+<li>psxview, driverscan, ssdt, ssdt_ex, apihooks, idt and driverirp to find rootkits</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="volatility">💽Volatility</h2>
+<p><strong>Identification of profile</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 imageinfo</span></span></code></pre></div><p><strong>Network connections</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; netscan &gt; netscan-results.txt
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; connections &gt; connections-results.txt
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; connscan &gt; connscan-results.txt
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; sockets &gt; sockets-results.txt
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; sockscan &gt; sockscan-results.txt</span></span></code></pre></div><p><strong>Extract cached files from memory</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; filescan &gt; filescan-results.txt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Look through the list of cached files for anything interesting, then run the following to extract it:</span>
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; dumpfiles -n -r &lt;filename&gt; --dump-dir<span style="color:#f92672">=</span>./</span></span></code></pre></div><p><strong>Rogue processes</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Processes running</span>
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; psscan
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; pstree
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; pstotal --cmd --output<span style="color:#f92672">=</span>dot --output-file<span style="color:#f92672">=</span>/path/pstotal-graph.dot <span style="color:#f92672">&amp;&amp;</span> xdot pstotal.dot
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; malprocfind &gt; malprocfind-results.txt <span style="color:#f92672">&amp;&amp;</span> grep False malprocfind-results.txt</span></span></code></pre></div><p><strong>Loaded DLLs of processes</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; dlllist -p &lt;pidofprocess&gt; &gt; dlllist-results.txt</span></span></code></pre></div><p><strong>Processes handles</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; handles -p &lt;pidofprocess&gt; &gt; handles-results.txt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows all the resources the process interacted with.</span>
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; handles -p &lt;pidofprocess&gt; -t Key &gt; handles-key-results.txt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows all the registry keys the process interacted with.</span>
+</span></span><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; handles -p &lt;pidofprocess&gt; -t File &gt; handles-file-results.txt</span></span></code></pre></div><p>Who started each process?</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>volatility -f /path/to/memory/dump.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; getsids -p &lt;pidofprocess&gt; &gt; getsids-results.txt</span></span></code></pre></div><h3 id="hibernation-file-to-memdump">Hibernation file to memdump</h3>
+<p>A hibernation file is stored in C:\hiberfile.sys if you have hibernation enabled. It contains parts of the memory at the time of hibernation, depending on the version of Windows. Run this to covert it
+to a raw image for further processing with Volatility.</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>volatility -f /path/to/hiberfile.sys --profile<span style="color:#f92672">=</span>&lt;profile&gt; imagecopy -O /path/to/output/folder/hibermemory.ra</span></span></code></pre></div><h2 id="super-timeline">Super timeline</h2>
+<p>Timeline of events + MFT entries</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First generate the plaso dump</span>
+</span></span><span style="display:flex;"><span>log2timeline.py plaso.dump /path/to/drive/image.E01
+</span></span><span style="display:flex;"><span>psort.py -z <span style="color:#e6db74">&#34;America/Sao_Paulo&#34;</span> -o L2tcsv /path/to/plaso.dump -w plaso.csv <span style="color:#e6db74">&#34;date &gt; &#39;yyyy-mm-dd hh:mm:ss&#39; AND date &lt; &#39;yyyy-mm-dd hh:mm:ss&#39; &#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Using docker</span>
+</span></span><span style="display:flex;"><span>sudo docker pull log2timeline/plaso
+</span></span><span style="display:flex;"><span>sudo docker run -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/data log2timeline/plaso log2timeline /data/plaso.dump /data/image.E01 <span style="color:#75715e"># Supposing that the E01 file is in your current directory</span>
+</span></span><span style="display:flex;"><span>sudo docker run -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/data log2timeline/plaso psort -z <span style="color:#e6db74">&#34;America/Sao_Paulo&#34;</span> -o L2tcsv /data/evidence.plaso <span style="color:#e6db74">&#34;date &gt; &#39;yyyy-mm-dd hh:mm:ss&#39; AND date &lt; &#39;yyyy-mm-dd hh:mm:ss&#39;&#34;</span> -w /data/evidence.csv</span></span></code></pre></div><p>You can filter out some temporary internet files, as these tend to add a lot of noise. The suggested ones to exclude are:</p>
+
+
+
+
+
+<pre tabindex="0"><code>  - Temporary\ Internet \Files
+  - PrivacIE
+  - Content.IE5
+  - IETldCache
+  - ACPI
+  - MSIE\ Cache\ File
+  - THREAD
+  - \(\$FILE\_NAME \)
+  - DLL\ LOADTIME</code></pre><p>You can store these in a whitelist file and then do negative grep to filter them out.</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep -a -v -i -f whitelist.txt /path/to/plaso.csv &gt; supertimeline.csv</span></span></code></pre></div><h2 id="timeline-with-memory-dump--disk">Timeline with memory dump + disk</h2>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ fls -m -p -r /path/to/image.E01 -i ewf &gt; drive-image-timeline-bodyfile
+</span></span><span style="display:flex;"><span>$ volatility -f /path/to/image.001 --profile<span style="color:#f92672">=</span>&lt;profile&gt; timeliner --output<span style="color:#f92672">=</span>body --output-file<span style="color:#f92672">=</span>drive-image-timeline-timeliner.body
+</span></span><span style="display:flex;"><span>$ cat drive-image-timeline-timeliner.body &gt;&gt; drive-image-timeline-bodyfile
+</span></span><span style="display:flex;"><span>$ mactime -z America/Sao_Paulo -y -d -b drive-image-timeline-bodyfile &lt;start time..end time in format yyy-mm-dd..yyyy-mm-dd&gt; &gt; drive-image-memory-timeline.csv
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This will give you a timeline with all the events in the given period.</span></span></span></code></pre></div><h2 id="windows-event-log">Windows event log</h2>
+<p><strong>Location</strong></p>
+<p>≥ Windows 7/2012 ⇒ <code>C:\Windows\System32\winevt\*.evtx</code>
+<code>C:\Windows\System32\config\*.evt</code></p>
+<p><strong>Tools</strong></p>
+<ul>
+<li><a href="https://eventlogxp.com/">Event Log Explorer</a> (evt/etvx)
+<ul>
+<li><code>Correcting UTC: View -&gt; Time Correction -&gt; Display UTC time</code></li>
+</ul>
+</li>
+<li><a href="https://ericzimmerman.github.io/">evtxecmd</a> (evtx only)</li>
+</ul>
+<h3 id="event-ids">Event IDs</h3>
+<p><strong>Remote Desktop - RDP</strong> - <em>Source</em>
+<strong>Security</strong></p>
+<ul>
+<li>4776 – Account logon with local authentication</li>
+<li>4624 – Account logon with domain authentication
+<ul>
+<li>Logon Type 10 is RDP interactive session</li>
+</ul>
+</li>
+<li>4625 - Failed account login attempt</li>
+<li>4648 - Logon specifying alternate credentials - if NLA enabled on destination.
+<ul>
+<li>Current logged-on</li>
+<li>User Name</li>
+<li>Alternate User</li>
+<li>Name Destination</li>
+<li>Host Name/IP</li>
+<li>Process Name</li>
+</ul>
+</li>
+<li>4688 - Process spawn
+<ul>
+<li>Text search for psexec, mimikatz, powershell, wmic, IEX.</li>
+</ul>
+</li>
+<li>4778/4779 – RDP reconnects</li>
+<li>5140 – Shares mounting</li>
+<li>7045 – Service installation</li>
+</ul>
+<p><strong>Microsoft-Windows-TerminalServices-RDPClient%4Operational.evtx</strong></p>
+<ul>
+<li>1024 - Destination Host Name</li>
+<li>1102 - Destination IP Address</li>
+</ul>
+<p><strong>Map Network Share (net.exe)</strong></p>
+<p><em>Source</em></p>
+<p><strong>Security.evtx</strong></p>
+<ul>
+<li>4648 – Logon specifying alternate credentials
+<ul>
+<li>Current logged-on</li>
+<li>User Name</li>
+<li>Alternate User</li>
+<li>Name Destination</li>
+<li>Host Name/IP</li>
+<li>Process Name</li>
+</ul>
+</li>
+</ul>
+<p><strong>Microsoft-Windows-SmbClient%4Security.evtx</strong></p>
+<ul>
+<li>31001 – Failed logon to destination
+<ul>
+<li>Destination Host Name</li>
+<li>User Name for failed logon</li>
+<li>Reason code for failed destination logon (e.g. bad password)</li>
+</ul>
+</li>
+</ul>
+<p><em>Destination</em></p>
+<p><strong>Security.evtx</strong></p>
+<ul>
+<li>4624 - Logon Type 3
+<ul>
+<li>Source IP/Logon</li>
+<li>User Name</li>
+</ul>
+</li>
+<li>4672
+<ul>
+<li>Logon User</li>
+<li>Name Logon by user with administrative rights</li>
+<li>Requirement for accessing default shares such as C$ and ADMIN$</li>
+</ul>
+</li>
+<li>4776 – NTLM if authenticating to Local System
+<ul>
+<li>Source Host Name/Logon User Name</li>
+</ul>
+</li>
+</ul>
+<p><strong>Timeline of event files</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Single file</span>
+</span></span><span style="display:flex;"><span>EvtxECmd.exe <span style="color:#f92672">-f</span> C:\Path\to\Security.evtx --csv C:\Path\to\directory\of\logs
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Directory containing events</span>
+</span></span><span style="display:flex;"><span>EvtxECmd.exe -d C:\Path\to\events --csv C:\Path\to\directory\of\logs</span></span></code></pre></div><p><strong>Always</strong> change the timezone when visualizing the data from EvtxECmd.exe, default is UTC-0. In excel, create a new column and use this formula:
+<code>=A2 - (3/24)</code> ⇒ Converting UTC-0 to UTC-3</p>
+<h2 id="plaso-filters">Plaso filters</h2>
+<p>Useful for collecting only useful information from an image</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat filter.txt
+</span></span><span style="display:flex;"><span>/<span style="color:#f92672">[</span>$<span style="color:#f92672">]</span>Recycle.Bin/.+
+</span></span><span style="display:flex;"><span>/Users/.+/NTUSER.DAT
+</span></span><span style="display:flex;"><span>/Users/.+/AppData/Local/Google/Chrome/.+/.+/.+
+</span></span><span style="display:flex;"><span>/Users/.+/AppData/Local/Google/Chrome/.+/.+/.+/.+
+</span></span><span style="display:flex;"><span>/Windows/System32/config/SOFTWARE
+</span></span><span style="display:flex;"><span>/Windows/System32/config/SYSTEM
+</span></span><span style="display:flex;"><span>/Windows/System32/config/SAM
+</span></span><span style="display:flex;"><span>/WIndows/System32/config/SECURITY
+</span></span><span style="display:flex;"><span>/Windows/System32/config/WinEvt/Logs/.+
+</span></span><span style="display:flex;"><span>/Windows/System32/WinEvt/Logs/.+
+</span></span><span style="display:flex;"><span>/<span style="color:#f92672">[</span>$<span style="color:#f92672">]</span>MFT
+</span></span><span style="display:flex;"><span>/<span style="color:#f92672">[</span>$<span style="color:#f92672">]</span>Extended/.+
+</span></span><span style="display:flex;"><span>/Windows/AppCompat/Programs/Amcache.hve
+</span></span><span style="display:flex;"><span>/Windows/Prefetch/.+
+</span></span><span style="display:flex;"><span>/Windows/System32/Tasks/.+
+</span></span><span style="display:flex;"><span>$ log2timeline --filter_file filter.txt --parsers triage image-plaso.dump &lt;/path/to/image.E01&gt;</span></span></code></pre></div><p><strong>Browser history</strong></p>
+<p>Edge and Internet explorer:</p>
+<ul>
+<li><code>C:\Users\username\AppData\Local\Packages\Microsoft.MicrosoftEdge_\AC\MicrosoftEdge\User\Default\Favorites</code></li>
+<li><code>C:\Users\username\AppData\Local\Packages\Microsoft.MicrosoftEdge_\AC\MicrosoftEdge\User\Default\Recovery</code></li>
+<li><code>C:\Users\username\AppData\Local\Packages\Microsoft.MicrosoftEdge_\AC\MicrosoftEdge\User\Default\DataStore</code></li>
+<li><code>C:\Users\username\AppData\Local\Microsoft\Windows\WebCache</code></li>
+<li><code>C:\Users\username\AppData\Local\Microsoft\Windows\History</code></li>
+<li><code>C:\Users\username\AppData\Local\Microsoft\Internet Explorer\IECompatData\</code></li>
+<li><code>C:\Users\username\AppData\Local\Microsoft\Feeds Cache\</code></li>
+<li><code>C:\Users\username\AppData\Local\Microsoft\Windows\WebCache\</code></li>
+<li><code>C:\Users\username\AppData\Local\Microsoft\Windows\Temporary Internet Files\</code></li>
+</ul>
+<p><strong>Chrome</strong></p>
+<ul>
+<li><code>C:\Users\username\AppData\Local\Google\Chrome\User Data\Default\History</code></li>
+</ul>
+<p>Firefox</p>
+<ul>
+<li><code>C:\Users\username\AppData\Roaming\Mozilla\Firefox\Profiles\</code></li>
+</ul>
+<h2 id="pcap-analysis">PCAP Analysis</h2>
+<p>NetworkMiner for statistics of DNS queries, long connections, amount of traffic of each IP.
+TODO</p>
+<h2 id="malware-analysis">Malware analysis</h2>
+<p><strong>OSINT lookup</strong></p>
+<p><a href="https://www.virustotal.com/gui/home/search">https://www.virustotal.com/gui/home/search</a></p>
+<p><a href="https://totalhash.cymru.com/">https://totalhash.cymru.com</a>
+<a href="https://metadefender.opswat.com/#!/">https://metadefender.opswat.com/#!/</a>
+<a href="https://avcaesar.malware.lu/">https://avcaesar.malware.lu/</a>
+<a href="https://malwr.com/">https://malwr.com/</a>
+<a href="https://hybrid-analysis.com">https://hybrid-analysis.com</a></p>
+<h3 id="signature-check">Signature check</h3>
+<p>Beware! It sends the file to VT!
+Tool: <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/sigcheck">https://docs.microsoft.com/en-us/sysinternals/downloads/sigcheck</a></p>
+
+
+
+
+
+<pre tabindex="0"><code class="language-=powershell" data-lang="=powershell">sigcheck -c -e -u -h -v -vt filename.exe &gt; sigcheck-results.csv
+sigcheck -c -e -u -h -v -vt \path\to\folders\like\system32 &gt; sigcheck-results.csv</code></pre><p>Open the CSV in Excel and order by the VT detection column to see which files had VirusTotal trigger.</p>
+<h2 id="data-carving">Data carving</h2>
+<p>Some tools</p>
+<ul>
+<li>scalpel / foremost</li>
+<li><a href="https://www.cgsecurity.org/wiki/TestDisk_Download">photorec</a>
+Extract files from unallocated space/slack space</li>
+</ul>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>blkls &lt;image.E01&gt; &gt; image.blkls</span></span></code></pre></div><p>Then run foremost as the data carving tool, to look for file structures eaders, footers, magic bytes etc) in the image you made with blkls:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>foremost -q -b <span style="color:#ae81ff">4096</span> -o &lt;output directory&gt; -c /usr/local/etc/foremost.conf age.blkls</span></span></code></pre></div><p>LCP - Check if account has password, found <a href="https://www.youtube.com/watch?v=NG9Cg_vBKOg&amp;ab_channel=HackersOnBoard&amp;s=4350">here</a></p>
+<p><a href="https://www.lcpsoft.com/en/index.html">https://www.lcpsoft.com/en/index.html</a></p>
+<hr>
+<h2 id="linuxunix">Linux/Unix</h2>
+<p>TODO!</p>
+<p>Volatility cheatsheet</p>
+<hr>
+<h2 id="-incident-response-methodology">📖 Incident Response Methodology</h2>
+<p>TODO!</p>
+<hr>
+<h1 id="live-response">Live response</h1>
+<p>Checking for security updates with <a href="https://www.microsoft.com/en-us/download/details.aspx?id=19892">MBSA</a> scan</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wmic qfe where hotfixid=<span style="color:#e6db74">&#34;KB958644&#34;</span> list full
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remotely querying for hotfixes</span>
+</span></span><span style="display:flex;"><span>wmic qfe where hotfixid=<span style="color:#e6db74">&#34;KB958644&#34;</span> list full /node<span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">127.0</span>.0.1 /user<span style="color:#960050;background-color:#1e0010">:</span>admin /password<span style="color:#960050;background-color:#1e0010">:</span>p@ssw0rd</span></span></code></pre></div><h2 id="dhcp">DHCP</h2>
+<p>Default Location Windows 2003/2008/2012 =&gt; %windir%\System32\Dhcp</p>
+<p><strong>Enable DHCP logging</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>reg add HKLM\System\CurrentControlSet\Services\DhcpServer\Parameters /v tivityLogFlag /t REG_DWORD /d <span style="color:#ae81ff">1</span></span></span></code></pre></div><hr>
+<h2 id="dns">DNS</h2>
+<p><strong>Enable DNS logging</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>DNSCmd &lt;DNS SERVER NAME&gt; /config /logLevel 0x8100F331</span></span></code></pre></div><p><strong>Setup path log</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>DNSCmd &lt;DNS SERVER NAME&gt; /config /LogFilePath &lt;PATH TO LOG FILE&gt;</span></span></code></pre></div><p><strong>Set max size</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>DNSCmd &lt;DNS SERVER NAME&gt; /config /logfilemaxsize 0xffffffff</span></span></code></pre></div><h3 id="powershell-way-requires-rsat"><strong>Powershell way</strong> (Requires <a href="http://www.microsoft.com/en-/download/details.aspx?id=7887%5D(http://www.microsoft.com/en-/download/details.aspx?id=7887)">RSAT</a>)</h3>
+<p><strong>Check if module is installed</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-Module DNSServer <span style="color:#960050;background-color:#1e0010">–</span>ListAvailable</span></span></code></pre></div><p><strong>Check whats is enabled</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-DnsServerDiagnostics</span></span></code></pre></div><p><strong>Enable all diagnostic options except for LogFilePath</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-DnsServerDiagnostics -All $True</span></span></code></pre></div><p><strong>Enable diagnostics for outgoing TCP responses for updates</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-DnsServerDiagnostics -SendPackets $True -TcpPackets $True -Answers rue -Updates $True</span></span></code></pre></div><p><strong>Show usage</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-Help Set-DnsServerDiagnostics</span></span></code></pre></div><hr>
+<p><strong>Show process running</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># cmd</span>
+</span></span><span style="display:flex;"><span>tasklist
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Using WMI</span>
+</span></span><span style="display:flex;"><span>wmic <span style="color:#66d9ef">process</span> list full</span></span></code></pre></div><p><strong>Accounts avaliable</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>net user
+</span></span><span style="display:flex;"><span>net localgroup administrators</span></span></code></pre></div><p><strong>Users logged on</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>psloggedon \\computername
+</span></span><span style="display:flex;"><span>quser</span></span></code></pre></div><p><strong>Date of creation ⇒ new accounts</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wmic useraccount get name,localaccount,installdate
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># One approuch is check creation time of folder directory</span>
+</span></span><span style="display:flex;"><span>dir /tc <span style="color:#e6db74">&#34;C:\Documents and Settings\&#34;</span>
+</span></span><span style="display:flex;"><span>dir /tc <span style="color:#e6db74">&#34;C:\Users\&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># /t = time</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># /c = creation</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Other is looking at the events log file (Windows XP/2003)</span>
+</span></span><span style="display:flex;"><span>cscript c:\windows\system32\eventquery.vbs /L security /FI <span style="color:#e6db74">&#34;id eq 642&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &gt;= Windows 7</span>
+</span></span><span style="display:flex;"><span>wevtutil qe security /f:text <span style="color:#e6db74">&#34;/q:*[System[(EventID=4720)]]&#34;</span> | more</span></span></code></pre></div><p><strong>Show all ports allowed in the firewall</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>netsh firewall show portopening</span></span></code></pre></div><p><strong>Open sessions</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>net view \\<span style="color:#ae81ff">127.0</span>.0.1
+</span></span><span style="display:flex;"><span>net session
+</span></span><span style="display:flex;"><span>nbstat
+</span></span><span style="display:flex;"><span>netstat -nabo</span></span></code></pre></div><p><strong>Startup applications</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wmic startup list full</span></span></code></pre></div><h1 id="linuxunix-1">Linux/Unix</h1>
+<p><strong>Check for process running</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -ef
+</span></span><span style="display:flex;"><span>ps aux
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Info about specific process, as ports and files associated</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>pgrep processo-malicioso<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> lsof -p $i; <span style="color:#66d9ef">done</span></span></span></code></pre></div><p><strong>Searching for files</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Owned by root</span>
+</span></span><span style="display:flex;"><span>find / -uid <span style="color:#ae81ff">0</span> -perm <span style="color:#ae81ff">-4000</span> <span style="color:#960050;background-color:#1e0010">–</span>print
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># By size - greater than 10 mb</span>
+</span></span><span style="display:flex;"><span>find / -size <span style="color:#ae81ff">+10M</span> <span style="color:#960050;background-color:#1e0010">–</span>ls
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># By time modification - between date A and B, ex: 10-10-2019 until 20-10-19</span>
+</span></span><span style="display:flex;"><span>find / -newertime <span style="color:#e6db74">&#39;yyyy-mm-dd&#39;</span> ! -newertime <span style="color:#e6db74">&#39;yyyy-mm-dd&#39;</span></span></span></code></pre></div><p><strong>Check for connections</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>netstat -tupan
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Listening ports</span>
+</span></span><span style="display:flex;"><span>ss -lntp
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Live monitoring of ports</span>
+</span></span><span style="display:flex;"><span>ss -ltnp | less -S
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Arp table</span>
+</span></span><span style="display:flex;"><span>arp -a</span></span></code></pre></div><p><strong>Check for allowed firewall rules</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>iptables -t nat -nL
+</span></span><span style="display:flex;"><span>iptables -t mangle -nL
+</span></span><span style="display:flex;"><span>iptables -t filter -nL
+</span></span><span style="display:flex;"><span>iptables -t raw -nL</span></span></code></pre></div><p><strong>Scheduled jobs</strong></p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Current user</span>
+</span></span><span style="display:flex;"><span>crontab -l
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># User specific</span>
+</span></span><span style="display:flex;"><span>sudo crontab -u id3s3c</span></span></code></pre></div><hr>
+<h3 id="analysis-of-competing-hypotheses-ach">Analysis of Competing Hypotheses (ACH)</h3>
+<p>Analysis to help validate a set of possible hypotheses for RCA (root cause analysis) after an incident.</p>
+<ol>
+<li>Create a list of hypotheses that are possible causes.</li>
+<li>Create a list of evidences gathered during the investigation.</li>
+<li>Create a matrix where the columns are the hypotheses and the rows are evidences.</li>
+<li>Evaluate line by line if the evidence is: <code>C</code> - consistent, <code>I</code> - inconsistent or <code>A</code> - ambiguous if the hypotheses is true or false.</li>
+<li>Delete/Hide evidence that is consistent with all hypotheses.</li>
+<li>Assess each evidences reliability (A-F) and credibility/truthness (1-6)
+<ul>
+<li>Who or what was the source of this evidence?</li>
+<li>What access the source have?</li>
+<li>What is the source reliability?</li>
+<li>Is the information plausible?</li>
+</ul>
+</li>
+<li>Rank the hypotheses in terms of least disconfirming evidence (rather than most supporting evidence )
+<ul>
+<li>Least evidence against is more likely to be correct.
+<ul>
+<li>Remote</li>
+<li>Very unlikely</li>
+<li>Unlikely</li>
+<li>Even chance</li>
+<li>Probably/likely</li>
+<li>Very likely</li>
+<li>Almost certainly</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<table>
+  <thead>
+      <tr>
+          <th>Reliability</th>
+          <th>Meaning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>A</code></td>
+          <td>Completely reliable</td>
+      </tr>
+      <tr>
+          <td><code>B</code></td>
+          <td>Usually reliable</td>
+      </tr>
+      <tr>
+          <td><code>C</code></td>
+          <td>Fairly reliable</td>
+      </tr>
+      <tr>
+          <td><code>D</code></td>
+          <td>Not usually reliable</td>
+      </tr>
+      <tr>
+          <td><code>E</code></td>
+          <td>Unreliable</td>
+      </tr>
+      <tr>
+          <td><code>F</code></td>
+          <td>Reliability can&rsquo;t be judge</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<table>
+  <thead>
+      <tr>
+          <th>Credibility</th>
+          <th>Meaning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>1</code></td>
+          <td>Confirmed by other sources</td>
+      </tr>
+      <tr>
+          <td><code>2</code></td>
+          <td>Probably true</td>
+      </tr>
+      <tr>
+          <td><code>3</code></td>
+          <td>Possibly true</td>
+      </tr>
+      <tr>
+          <td><code>4</code></td>
+          <td>Not usually reliable</td>
+      </tr>
+      <tr>
+          <td><code>5</code></td>
+          <td>Improbable</td>
+      </tr>
+      <tr>
+          <td><code>6</code></td>
+          <td>Truth can&rsquo;t be judge</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="wannacry-example---who-was-responsible-for-the-attack">Wannacry Example - Who was responsible for the attack?</h3>
+<p>H1 - A sophisticated financially-motivated cybercriminal actor
+H2 - An unsophisticated financially-motivated cybercriminal actor
+H3 - A nation state or state-affiliated actor conducting a disruptive operation
+H4 - A nation state or state-affiliated actor aiming to discredit the National Security Agency (NSA)</p>
+<table>
+  <thead>
+      <tr>
+          <th>Evidence</th>
+          <th>H1</th>
+          <th>H2</th>
+          <th>H3</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td></td>
+          <td>C</td>
+          <td>C</td>
+          <td>I</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>References</strong>
+<a href="https://www.youtube.com/watch?v=iuU_GI5WMpY">https://www.youtube.com/watch?v=iuU_GI5WMpY</a>
+<a href="https://isc.sans.edu/forums/diary/Analysis+of+Competing+Hypotheses+WCry+and+Lazarus+ACH+part+2/22470/">https://isc.sans.edu/forums/diary/Analysis+of+Competing+Hypotheses+WCry+and+Lazarus+ACH+part+2/22470/</a>
+<a href="https://www.reliaquest.com/blog/wannacry-an-analysis-of-competing-hypotheses-part-ii/">https://www.reliaquest.com/blog/wannacry-an-analysis-of-competing-hypotheses-part-ii/</a></p>
+<hr>
+<h2 id="useful-information">Useful information</h2>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCVzG9JCzak3hNqqrVCTQQIzH0ty77BWiLEbDu-q9oxkhAamqnlYgtQ4gF85pF6j6g3GmQxivuvO1U/pubhtml#">Spreadsheet with information about ransomware</a> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCVzG9JCzak3hNqqrVCTQQIzH0ty77BWiLEbDu-q9oxkhAamqnlYgtQ4gF85pF6j6g3GmQxivuvO1U/pubhtml#">provided by the community</a></li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://blog.1234n6.com/2018/10/available-artifacts-evidence-of.html">https://blog.1234n6.com/2018/10/available-artifacts-evidence-of.html</a></li>
+<li><a href="https://digital-rensics.sans.org/community/papers/gcfa/windows-logon-forensics_6928">https://digital-rensics.sans.org/community/papers/gcfa/windows-logon-forensics_6928</a></li>
+<li><a href="https://github.com/christophetd/hunting-ndmaps/blob/master/pdf/windows-basic-event-logs.pdf">https://github.com/christophetd/hunting-ndmaps/blob/master/pdf/windows-basic-event-logs.pdf</a></li>
+<li><a href="https://github.com/christophetd/hunting-ndmaps/blob/master/pdf/memory-hunting.pdf">https://github.com/christophetd/hunting-ndmaps/blob/master/pdf/memory-hunting.pdf</a></li>
+<li><a href="https://github.com/EricZimmerman">https://github.com/EricZimmerman</a></li>
+<li><a href="https://www.sans.org/blog/finding-unknown-malware-with-densityscout">https://www.sans.org/blog/finding-unknown-malware-with-densityscout</a></li>
+<li><a href="https://digital-forensics.sans.org/media/DFPS_FOR508_v4.6_4-19.pdf">https://digital-forensics.sans.org/media/DFPS_FOR508_v4.6_4-19.pdf</a></li>
+<li><a href="https://www.sans.org/blog/help-improve-edd-encrypted-disk-detector/">https://www.sans.org/blog/help-improve-edd-encrypted-disk-detector/</a></li>
+<li><a href="http://dragon-online.net/">http://dragon-online.net/</a> (Firefox said that there is <strong>cryptominer</strong> running here, be aware)</li>
+<li><a href="https://www.youtube.com/c/SANSDigitalForensics">https://www.youtube.com/c/SANSDigitalForensics</a></li>
+<li><a href="https://digital-forensics.sans.org/media/rekall-memory-forensics-eatsheet.pdf">https://digital-forensics.sans.org/media/rekall-memory-forensics-eatsheet.pdf</a></li>
+<li><a href="https://www.andreafortuna.org/2018/06/04/using-mft-anomalies-to-spot-spicious-files-in-forensic-analysis/">https://www.andreafortuna.org/2018/06/04/using-mft-anomalies-to-spot-spicious-files-in-forensic-analysis/</a></li>
+<li><a href="https://www.sans.org/reading-room/whitepapers/incident/incident-ndlers-handbook-33901">https://www.sans.org/reading-room/whitepapers/incident/incident-ndlers-handbook-33901</a></li>
+<li><a href="https://docs.microsoft.com/en-us/powershell/module/dnsserver/set-sserverdiagnostics?view=win10-ps">https://docs.microsoft.com/en-us/powershell/module/dnsserver/set-sserverdiagnostics?view=win10-ps</a></li>
+<li><a href="https://www.securitynik.com/">https://www.securitynik.com/</a></li>
+</ul>
+<p>SANS Posters
+- <a href="https://www.sans.org/security-resources/posters/dfir-find-evil/35/download">https://www.sans.org/security-resources/posters/dfir-find-evil/35/download</a>
+- <a href="https://in-addr.nl/mirror/SANS-Digital-Forensics-and-Incident-Response-Poster-2012.pdf">https://in-addr.nl/mirror/SANS-Digital-Forensics-and-Incident-Response-Poster-2012.pdf</a>
+-</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/tags/dfir/">#dfir</a>
+  
+    <a class="blog-tags" href="/tags/forensics/">#forensics</a>
+  
+    <a class="blog-tags" href="/tags/volatility/">#volatility</a>
+  
+    <a class="blog-tags" href="/tags/ir/">#ir</a>
+  
+    <a class="blog-tags" href="/tags/ftk/">#ftk</a>
+  
+    <a class="blog-tags" href="/tags/mft/">#mft</a>
+  
+    <a class="blog-tags" href="/tags/evtx/">#evtx</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+   | 
+</small></footer>
+
+    
+</body>
+
+</html>
