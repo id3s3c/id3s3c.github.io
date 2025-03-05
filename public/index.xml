@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link>//localhost:1313/</link>
-    <description>Recent content on </description>
+    <title>blog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on blog</description>
     <generator>Hugo</generator>
-    <language>en</language>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <managingEditor>victor.ide@protonmail.com (id3s3c blog)</managingEditor>
+    <webMaster>victor.ide@protonmail.com (id3s3c blog)</webMaster>
+    <lastBuildDate>Wed, 05 Mar 2025 13:21:10 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Desktop App Testing Part 1</title>
+      <link>http://localhost:1313/posts/desktop-app-testing-part-1/</link>
+      <pubDate>Wed, 05 Mar 2025 13:21:10 -0300</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/posts/desktop-app-testing-part-1/</guid>
+      <description>&lt;p&gt;In a recent engagement I was in a engagement to look for a desktop application, and since I could not find any reference to how to approach it to find vulnerabilities I wrote it as to be as future reference.&lt;/p&gt;&#xA;&lt;p&gt;This blog post will be focused on a simple yet effective techniques to find vulnerabilities that can be reproduced by anyone with minimal setup, and with main focus on windows applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DFIR cheat sheet</title>
+      <link>http://localhost:1313/posts/2024-01-05-dfir-cheat-sheet/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/posts/2024-01-05-dfir-cheat-sheet/</guid>
+      <description>&lt;p&gt;Wrap-up of a bunch of open source information about incident response and digital forensics.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-overall-methodology---digital-forensics-for-ir&#34;&gt;📖 Overall methodology - Digital Forensics for IR&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://digital-forensics.sans.org/media/rekall-memory-forensics-cheatsheet.pdf&#34;&gt;RAM Memory acquisition&lt;/a&gt; (If the acquisition make sense)&#xA;&lt;ol&gt;&#xA;&lt;li&gt;FTK Imager&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/Velocidex/WinPmem/releases/tag/v4.0.rc1&#34;&gt;Wimpmem&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/thimbleweed/All-In-USB/blob/master/utilities/DumpIt/DumpIt.exe&#34;&gt;DumpIp&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Check if machine has full disk encryption, if so LIVE image it before turning it off.&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://www.magnetforensics.com/products/encrypted-disk-detector/&#34;&gt;EDD&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Disk imaging&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Due to &lt;a href=&#34;https://en.wikipedia.org/wiki/Wear_leveling&#34;&gt;wearing leveling&lt;/a&gt; when imaging SSD Drives always prefer to image the system LIVE. Nice intro paper on the subject can be found &lt;a href=&#34;https://siaiap34.univali.br/sbseg2015/anais/WFC/artigoWFC01.pdf&#34;&gt;here&lt;/a&gt; (PT/BR) and &lt;a href=&#34;https://www.youtube.com/watch?v=v_YKD0BRGLM&amp;amp;list=PLfouvuAjspTqyfrgYO76VOwvVqK1AsMwK&amp;amp;index=43&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>victor.ide@protonmail.com (id3s3c blog)</author>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;My name is Victor Ide - &lt;code&gt;@id3s3c&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I started this blog to challenge myself writing posts and sharing knowledge.&lt;/p&gt;&#xA;&lt;p&gt;I hope I can motivate others for the Infosec community with some articles like many others motivated me the last years.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

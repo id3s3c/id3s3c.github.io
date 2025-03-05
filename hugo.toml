@@ -2,6 +2,8 @@ baseURL = 'https://id3s3c.github.io/'
 languageCode = 'en-us'
 title = 'blog'
 theme = "nightfall"
+#theme = "hugo-theme-nightfall"
+
 
 [params]
 user = "id3s3c"
